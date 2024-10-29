@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Monitoramento de Temperatura e Umidade</title>
+    <meta name="description" content="Projeto de monitoramento de temperatura e umidade utilizando ESP32 e DHT11, 
+    com visualização em tempo real na plataforma ThingSpeak. O sistema aciona um relé com base em condições específicas 
+    de temperatura e umidade.">
+    <meta name="google-site-verification" content="9yJxvYsOQ-EOGwJQtazPX0Kgucxw0ZnRlaPnpazSA9Q" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Monitoramento de Temperatura e Umidade</h1>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Objetivos:</h2>
+            <ul>
+                <li>Coletar dados de temperatura e umidade em tempo real utilizando o microcontrolador ESP32 e o sensor DHT11.</li>
+                <li>Transmitir esses dados para a plataforma ThingSpeak para visualização.</li>
+                <li>Acionar um relé caso a temperatura ultrapasse 31 °C ou a umidade relativa do ar seja superior a 70%.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Vídeo Explicativo do Projeto:</h2>
+            <p>Explicação sobre o funcionamento do projeto, incluindo a configuração do ESP32, o sensor DHT11, 
+                e o envio dos dados para a plataforma ThingSpeak.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cTT22wd7SsQ?si=5zVGn_3os0SCGzNo" 
+                    title="YouTube video player - Explicação do Projeto ESP32 com ThingSpeak" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>        
+        <section>
+            <h2>ThingSpeak:</h2>
+            <div>
+                <div class="container-flex">
+                    <div class="chart-section">
+                        <div class="select-container">
+                            <label for="results1">Resultados:</label>
+                            <input type="number" id="results1" value="30" onchange="updateChart1()" min="1" max="100" />
+                            
+                            <label for="type1">Tipo de Gráfico:</label>
+                            <select id="type1" onchange="updateChart1()">
+                                <option value="column">Coluna</option>
+                                <option value="line">Linha</option>
+                                <option value="bar">Barra</option>
+                                <option value="spline">Spline</option>
+                                <option value="step">Step</option>
+                            </select>
+                        </div>
+                        <iframe id="iframe1" width="450" height="260" title="Gráfico de Temperatura"></iframe>
+                    </div>
+                    <div class="data-section">
+                        <h3>Últimos Dados de Temperatura</h3>
+                        <div id="dataContainer1" class="data-table"></div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="container-flex">
+                    <div class="chart-section">
+                        <div class="select-container">
+                            <label for="results2">Resultados: </label>
+                            <input type="number" id="results2" value="30" onchange="updateChart2()" min="1" max="100" />
+
+                            <label for="type2">Tipo: </label>
+                            <select id="type2" onchange="updateChart2()">
+                                <option value="column">Coluna</option>
+                                <option value="line">Linha</option>
+                                <option value="bar">Barra</option>
+                                <option value="spline">Spline</option>
+                                <option value="step">Step</option>
+                            </select>
+                        </div>
+                        <iframe id="iframe2" width="450" height="260" title="Gráfico de Umidade"></iframe>
+                    </div>
+                    <div class="data-section">
+                        <h3>Últimos Dados de Umidade</h3>
+                        <div id="dataContainer2" class="data-table"></div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="container-flex">
+                    <div class="chart-section">
+                        <div class="select-container">
+                            <h3>Estado do Relé</h3>
+                        </div>
+                        <iframe id="iframe3" width="450" height="260" title="Gráfico de Estados do Relé"></iframe>
+                    </div>
+                    <div class="data-section">
+                        <h3>Últimos Estados do Relé</h3>
+                        <div id="dataContainer3" class="data-table"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Eduardo de Assis e Sara Bodnar - 09/2024</p>
+        <p>Disciplina: Fundamentos de Internet das Coisas</p>
+        <p>PUCPR - Análise e Desenvolvimento de Sistemas</p>
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/eduardo-de-assis-21b308153" target="_blank">LinkedIn Eduardo</a> |
+            <a href="https://www.linkedin.com/in/sara-bodnar-965911202" target="_blank">LinkedIn Sara</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
