@@ -78,37 +78,7 @@ function updateUmidadeData(results) {
         .catch(error => console.error("Erro ao buscar dados da API:", error));
 }
 
-let apiUrl3 = "https://thingspeak.com/channels/" + channelId + "/charts/3?title=Relé" +
-        "&bgcolor=" + bgcolorHumidity +
-        "&color=" + colorHumidity +
-        "&dynamic=" + dynamic +
-        "&type=step" +
-        "&update=" + update +
-        "&yaxismin=0" +
-        "&yaxismax=1";
-document.getElementById('iframe3').src = apiUrl3;
 
-fetch(`https://api.thingspeak.com/channels/${channelId}/feeds.json?results=120`)
-    .then(response => response.json())
-    .then(data => {
-        const feeds = data.feeds.reverse();
-        let dataContainer3 = document.getElementById("dataContainer3");
-        let htmlContent = ``;
-
-        feeds.forEach(feed => {
-            const relayStatus = feed.field3 === "1" ? 'Ligado' : 'Desligado';
-            // Obtenha a data e a hora
-            const createdAt = new Date(feed.created_at);
-            const date = createdAt.toLocaleDateString();
-            const time = createdAt.toLocaleTimeString();
-
-            // Adicione a data e a hora ao conteúdo HTML
-            htmlContent += `<p>Relé: ${relayStatus} (${date}, Hora: ${time})</p>`;
-        });
-
-        dataContainer3.innerHTML = htmlContent;
-    })
-    .catch(error => console.error("Erro ao buscar dados da API:", error));
 
 updateChart1();
 updateChart2();
