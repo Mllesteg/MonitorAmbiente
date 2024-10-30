@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>Monitoramento de Temperatura e Umidade</title>
-    <meta name="description" content="Projeto de monitoramento de temperatura e umidade utilizando ESP32 e DHT11, 
-    com visualização em tempo real na plataforma ThingSpeak. O sistema aciona um relé com base em condições específicas 
-    de temperatura e umidade.">
+    <title>Monitoreo de Temperatura y Humedad</title>
+    <meta name="description" content="Proyecto de monitoreo de temperatura y humedad utilizando ESP32 y DHT11, con visualización en tiempo real en la plataforma ThingSpeak.">
     <meta name="google-site-verification" content="9yJxvYsOQ-EOGwJQtazPX0Kgucxw0ZnRlaPnpazSA9Q" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Monitoramento de Temperatura e Umidade</h1>
+        <h1>Monitoreo de Temperatura y Humedad</h1>
     </header>
 
     <main class="container">
         <section>
             <h2>Objetivos:</h2>
             <ul>
-                <li>Coletar dados de temperatura e umidade em tempo real utilizando o microcontrolador ESP32 e o sensor DHT11.</li>
-                <li>Transmitir esses dados para a plataforma ThingSpeak para visualização.</li>
+                <li>Recolectar datos de temperatura y humedad en tiempo real utilizando el microcontrolador ESP32 y el sensor DHT11.</li>
+                <li>Transmitir estos datos a la plataforma ThingSpeak para visualización.</li>
             </ul>
         </section>       
         <section>
@@ -45,7 +43,7 @@
                         <iframe id="iframe1" width="450" height="260" title="Gráfico de Temperatura"></iframe>
                     </div>
                     <div class="data-section">
-                        <h3>Últimos Dados de Temperatura</h3>
+                        <h3>Últimos Datos de Temperatura</h3>
                         <div id="dataContainer1" class="data-table"></div>
                     </div>
                 </div>
@@ -68,21 +66,8 @@
                         <iframe id="iframe2" width="450" height="260" title="Gráfico de Umidade"></iframe>
                     </div>
                     <div class="data-section">
-                        <h3>Últimos Dados de Umidade</h3>
+                        <h3>Últimos Datos de Humedad</h3>
                         <div id="dataContainer2" class="data-table"></div>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="container-flex">
-                    <div class="chart-section">
-                        <div class="select-container">
-                            <h3>Estado do Relé</h3>
-                        </div>
-                        <iframe id="iframe3" width="450" height="260" title="Gráfico de Estados do Relé"></iframe>
-                    </div>
-                    <div class="data-section">
-                        <h3>Últimos Estados do Relé</h3>
-                        <div id="dataContainer3" class="data-table"></div>
                     </div>
                 </div>
             </div>
@@ -90,9 +75,9 @@
     </main>
 
     <footer>
-        <p>Desenvolvido por Eduardo de Assis e Sara Bodnar - 09/2024</p>
-        <p>Disciplina: Fundamentos de Internet das Coisas</p>
-        <p>PUCPR - Análise e Desenvolvimento de Sistemas</p>
+        <p>Desenvolvido por Ana Julia V.P ; Wanderson Morais - 10/2024</p>
+        <p>Disciplina: Communicacion de Datos I</p>
+        <p>UDEC - Ingenharia de Sistemas</p>
     </footer>
 
     <script src="script.js"></script>
