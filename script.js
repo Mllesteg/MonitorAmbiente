@@ -70,7 +70,7 @@ function updateUmidadeData(results) {
                 const date = createdAt.toLocaleDateString();
                 const time = createdAt.toLocaleTimeString();
 
-                htmlContent += `<p>Umidade: ${feed.field2}% (${date}, Hora: ${time})</p>`;
+                htmlContent += `<p>Humedad: ${feed.field2}% (${date}, Hora: ${time})</p>`;
             });
 
             dataContainer2.innerHTML = htmlContent;
