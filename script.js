@@ -1,4 +1,4 @@
-let channelId = "2673053";
+let channelId = "2720624";
 let bgcolorTemp = '%23e6f7ff';
 let colorTemp = '%23FF4500';
 let bgcolorHumidity = '%23e6f7ff';
