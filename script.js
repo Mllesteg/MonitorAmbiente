@@ -39,7 +39,7 @@ function updateTemperatureData(results) {
 
             dataContainer1.innerHTML = htmlContent;
         })
-        .catch(error => console.error("Erro ao buscar dados da API:", error));
+        .catch(error => console.error("Error al buscar datos de la API:", error));
 }
 
 function updateChart2() {
@@ -75,7 +75,7 @@ function updateUmidadeData(results) {
 
             dataContainer2.innerHTML = htmlContent;
         })
-        .catch(error => console.error("Erro ao buscar dados da API:", error));
+        .catch(error => console.error("Error al buscar datos de la API:", error));
 }
 
 
