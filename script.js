@@ -45,7 +45,7 @@ function updateTemperatureData(results) {
 function updateChart2() {
     let results = document.getElementById('results2').value;
     let type = document.getElementById('type2').value;
-    let apiUrl2 = "https://thingspeak.com/channels/" + channelId + "/charts/2?title=Umidade" +
+    let apiUrl2 = "https://thingspeak.com/channels/" + channelId + "/charts/2?title=Humedad" +
         "&bgcolor=" + bgcolorHumidity +
         "&color=" + colorHumidity +
         "&dynamic=" + dynamic +
