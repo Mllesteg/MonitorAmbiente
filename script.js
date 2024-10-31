@@ -78,7 +78,44 @@ function updateUmidadeData(results) {
         .catch(error => console.error("Error al buscar datos de la API:", error));
 }
 
+function updateChart3() {
+    let results = document.getElementById('results3').value;
+    let type = document.getElementById('type3').value;
+    let apiUrl3 = "https://thingspeak.com/channels/" + channelId + "/charts/3?title=Hidrogéno" +
+        "&bgcolor=" + bgcolorHumidity +
+        "&color=" + colorHumidity +
+        "&dynamic=" + dynamic +
+        "&results=" + results +
+        "&type=" + type +
+        "&update=" + update +
+        "&yaxismin=0" +
+        "&yaxismax=100";
+    document.getElementById('iframe3').src = apiUrl3;
+    updateUmidadeData(results);
+}
+
+function updatehidrogénoData(results) {
+    fetch(`https://api.thingspeak.com/channels/${channelId}/feeds.json?results=${results}`)
+        .then(response => response.json())
+        .then(data => {
+            const feeds = data.feeds.reverse();
+            let dataContainer3 = document.getElementById("dataContainer3");
+            let htmlContent = ``;
+
+            feeds.forEach(feed => {
+                const createdAt = new Date(feed.created_at);
+                const date = createdAt.toLocaleDateString();
+                const time = createdAt.toLocaleTimeString();
+
+                htmlContent += `<p>Hidrogéno: ${feed.field2}% (${date}, Hora: ${time})</p>`;
+            });
+
+            dataContainer2.innerHTML = htmlContent;
+        })
+        .catch(error => console.error("Error al buscar datos de la API:", error));
+}
 
 
 updateChart1();
 updateChart2();
+updateChart3();
