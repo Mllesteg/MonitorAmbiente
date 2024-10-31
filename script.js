@@ -81,7 +81,7 @@ function updateUmidadeData(results) {
 function updateChart3() {
     let results = document.getElementById('results3').value;
     let type = document.getElementById('type3').value;
-    let apiUrl3 = "https://thingspeak.com/channels/" + channelId + "/charts/3?title=Hidrógeno" +
+    let apiUrl3 = "https://thingspeak.com/channels/" + channelId + "/charts/3?title=Hidrogeno" +
         "&bgcolor=" + bgcolorHumidity +
         "&color=" + colorHumidity +
         "&dynamic=" + dynamic +
