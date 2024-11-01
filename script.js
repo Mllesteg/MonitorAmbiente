@@ -17,7 +17,7 @@ function updateChart1() {
         "&type=" + type +
         "&update=" + update +
         "&yaxismin=0" +
-        "&yaxismax=100";
+        "&yaxismax=50";
     document.getElementById('iframe1').src = apiUrl1;
     updateTemperatureData(results);
 }
