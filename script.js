@@ -91,10 +91,10 @@ function updateChart3() {
         "&yaxismin=0" +
         "&yaxismax=100";
     document.getElementById('iframe3').src = apiUrl3;
-    updateUmidadeData(results);
+    updatehidrogenoData(results);
 }
 
-function updatehidrogénoData(results) {
+function updatehidrogenoData(results) {
     fetch(`https://api.thingspeak.com/channels/${channelId}/feeds.json?results=${results}`)
         .then(response => response.json())
         .then(data => {
@@ -107,7 +107,7 @@ function updatehidrogénoData(results) {
                 const date = createdAt.toLocaleDateString();
                 const time = createdAt.toLocaleTimeString();
 
-                htmlContent += `<p>Hidrogéno: ${feed.field3}% (${date}, Hora: ${time})</p>`;
+                htmlContent += `<p>Hidrogeno: ${feed.field3}% (${date}, Hora: ${time})</p>`;
             });
 
             dataContainer3.innerHTML = htmlContent;
