@@ -89,7 +89,7 @@ function updateChart3() {
         "&type=" + type +
         "&update=" + update +
         "&yaxismin=0" +
-        "&yaxismax=10";
+        "&yaxismax=1000";
     document.getElementById('iframe3').src = apiUrl3;
     updatehidrogenoData(results);
 }
