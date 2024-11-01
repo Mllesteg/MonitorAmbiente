@@ -107,7 +107,7 @@ function updatehidrogenoData(results) {
                 const date = createdAt.toLocaleDateString();
                 const time = createdAt.toLocaleTimeString();
 
-                htmlContent += `<p>Hidrogeno: ${feed.field3}% (${date}, Hora: ${time})</p>`;
+                htmlContent += `<p>Hidrogeno: ${feed.field3}ppm (${date}, Hora: ${time})</p>`;
             });
 
             dataContainer3.innerHTML = htmlContent;
